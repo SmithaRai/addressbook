@@ -4,49 +4,73 @@ import java.util.Scanner;
 
 public class AddContact {
 	
-	   public String firstName;
-	   public String lastName;
-	   public long phoneNumber;
-	   public String emailId;
-	   public String address;
-	   public String city;
-	   public String state;
-	   public int zip;
+	   private String firstName;
+	   private String lastName;
+	   private long phoneNumber;
+	   private String emailId;
+	   private String address;
+	   private String city;
+	   private String state;
+	   private int zip;
 	    
 	    static Scanner input = new Scanner(System.in);
 
-	    public String setFirstName(String firstName){
+	    public String getFirstName() {
+			return firstName;
+		}
+	    public void setFirstName(String firstName){
 	        this.firstName = firstName;
-	        return firstName;
 	    }
-	    public String setLastName(String lastName){
+	    
+	    public String getLastName() {
+			return lastName;
+		}
+	    public void setLastName(String lastName){
 	        this.lastName = lastName;
-	        return lastName;
 	    }
-	    public long setPhoneNumber(long phoneNumber){
+	    
+	    public long getPhoneNumber() {
+			return phoneNumber;
+		}
+	    public void setPhoneNumber(long phoneNumber){
 	        this.phoneNumber = phoneNumber;
-	        return phoneNumber;
 	    }
-	    public String setEmailId(String emailId){
+	    
+	    public String getEmailId() {
+			return emailId;
+		}
+	    public void setEmailId(String emailId){
 	        this.emailId = emailId;
-	        return emailId;
 	    }
-	    public String setAddress(String address){
+	    
+	    public String getAddress() {
+			return address;
+		}
+	    public void setAddress(String address){
 	        this.address = address;
-	        return address;
 	    }
-	    public String setCity(String city){
+	    
+	    public String getCity() {
+			return city;
+		}
+	    public void setCity(String city){
 	        this.city = city;
-	        return city;
 	    }
-	    public String setState(String state){
+	    
+	    public String getState() {
+			return state;
+		}
+	    public void setState(String state){
 	        this.state = state;
-	        return state;
 	    }
-	    public int setZips(int zip) {
+	    
+	    public int getZip() {
+			return zip;
+		}
+	    public void setZips(int zip) {
 	        this.zip = zip;
-	        return zip;
 	    }
+	    
 	    public static void main(String[] args) {
 
 	        AddContact person = new AddContact();
