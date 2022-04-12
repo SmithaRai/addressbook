@@ -1,10 +1,10 @@
 package AddressBookMain;
-
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class EditContact {
-	
+public class DeleteContact {
+
+
 	 static ArrayList<AddContact> contactList = new ArrayList<>();
 	 static Scanner input = new Scanner(System.in);
 	 static int count = 0;
@@ -43,7 +43,6 @@ public class EditContact {
 	       
 	        count++;
 	        
-	    	System.out.println("size: "+contactList.size());
 
 	 }
 	 
@@ -51,6 +50,7 @@ public class EditContact {
 	 {
 		 int index = 0;
 		 boolean Found = false ;
+		
 		 if(count > 0)
 		 {
 			 System.out.println("enter first name to edit contact : ");
@@ -98,9 +98,27 @@ public class EditContact {
 			 
 		 }
 	 
+	 public static void deletecontacts()
+	 {
+		 if(count > 0)
+		 {
+			 System.out.println("enter first name to edit contact : ");
+			 String name = input.next();
+		
+			 for(int i =0 ; i < contactList.size() ; i++ )
+			 {
+			        if(contactList.get(i).getFirstName().equals(name)) {
+                
+				 contactList.remove(i);  }
+			 }
+		 }
+		 System.out.println("deleted contact");
+	 }
+	 
 	 public static void display()
 	 {
-
+    
+		 System.out.println("no data to display");
 
 		 for  (int i = 0 ; i < contactList.size(); i ++ )
 		 {
@@ -115,37 +133,42 @@ public class EditContact {
 			 
 		 }
 	 }
+	 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
-	    public static void main(String[] args) {
-	    	
-	    	System.out.println("******************ENTER CHOICE**************************");
-	    	System.out.println(" ");
-	    	
-	    	int choice = 0;
-			do {
-	    	System.out.println(" 1.getcontacts-- \n 2.edit contacts-- \n display contacts-- \n ");
-	    	int ch = input.nextInt();
-	    
-	    	         switch(ch)
-	    	          {
-	    	  
-	    	                 case 1: getcontacts();
-	    	                          break;
-	    	            
-	    	                 case 2: editcontacts();
-	    	                          break;
-	    	             
-	    	                 case 3:  display() ;
-	    	                           break;
-	    	             
-	    	                 default : System.out.println("invalid input");
-	    	                           break;
-	    	          }             
-	    	                	
-	    	              System.out.println("press '4' to continue....");
-	    	              choice = input.next().charAt(0);
-	    	         
-	    	    }while(choice=='4');
+		System.out.println("******************ENTER CHOICE**************************");
+    	System.out.println(" ");
+    	
+    	int choice = 0;
+		do {
+    	System.out.println(" 1.getcontacts-- \n 2.edit contacts-- \n 3. delete contacts-- \n 4.display contacts ");
+    	int ch = input.nextInt();
+    
+    	         switch(ch)
+    	          {
+    	  
+    	                 case 1: getcontacts();
+    	                          break;
+    	            
+    	                 case 2: editcontacts();
+    	                          break;
+    	                          
+    	                 case 3: deletecontacts();
+    	                         break;
+    	             
+    	                 case 4:  display() ;
+    	                           break;
+    	             
+    	                 default : System.out.println("invalid input");
+    	                           break;
+    	          }             
+    	                	
+    	              System.out.println("press '5' to continue....");
+    	              choice = input.next().charAt(0);
+    	         
+    	    }while(choice=='5');
 
-      }
-}	    
+	}
+
+}
